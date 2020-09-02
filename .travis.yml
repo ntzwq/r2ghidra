@@ -5,8 +5,24 @@ branches:
   only:
     - master
 
-os: linux
-dist: bionic
+jobs:
+  fast_finish: true
+  include:
+    - os: linux
+      name: X86_64
+      dist: bionic
+    - os: linux
+      name: S390X
+      arch: s390x
+      dist: bionic
+    - os: linux
+      name: PPC64
+      arch: ppc64le
+      dist: bionic
+    - os: linux
+      name: ARM64
+      arch: arm64
+      dist: bionic
 
 addons:
   apt:
